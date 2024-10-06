@@ -4,7 +4,7 @@ Made by Dika Maulidal
 
 import json
 from concurrent.futures import ThreadPoolExecutor
-from utils import check_social_media, scrape_github
+from utils import check_social_media, scrape_github, scrape_kaskus, scrape_dicoding
 from tqdm import tqdm
 from colorama import Fore, Style, init
 
@@ -51,6 +51,18 @@ def check_account(site, target_account, pbar, found_counter):
         # If the site is GitHub, scrape additional information
         if site_name == 'GitHub':
             scraped_data = scrape_github(result['response'].text)
+            for key, value in scraped_data.items():
+                output += f"\n    {Style.BRIGHT} - [{Fore.LIGHTCYAN_EX}{key.capitalize()}{Style.RESET_ALL}{Style.BRIGHT}] {value}"
+
+        # If the site is Kaskus, scrape additional information
+        elif site_name == 'Kaskus':
+            scraped_data = scrape_kaskus(result['response'].text)
+            for key, value in scraped_data.items():
+                output += f"\n    {Style.BRIGHT} - [{Fore.LIGHTCYAN_EX}{key.capitalize()}{Style.RESET_ALL}{Style.BRIGHT}] {value}"
+
+        # If the site is Dicoding, scrape additional information
+        elif site_name == 'Dicoding':
+            scraped_data = scrape_dicoding(result['response'].text)
             for key, value in scraped_data.items():
                 output += f"\n    {Style.BRIGHT} - [{Fore.LIGHTCYAN_EX}{key.capitalize()}{Style.RESET_ALL}{Style.BRIGHT}] {value}"
 

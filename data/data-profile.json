@@ -1192,6 +1192,16 @@
       "cat": "dating"
     },
     {
+      "name": "Dicoding",
+      "uri_check": "https://www.dicoding.com/users/{account}/academies",
+      "e_code": 200,
+      "e_string": "Tentang Saya",
+      "m_string": "Oppps, gak ketemu nih...",
+      "m_code": 200,
+      "known": ["bob", "red"],
+      "cat": "tech"
+    },
+    {
       "name": "Mastodon-Defcon",
       "uri_check": "https://defcon.social/@{account}",
       "e_code": 200,
@@ -2647,6 +2657,16 @@
       "m_code": 404,
       "known": ["babyoda", "residentmario"],
       "cat": "coding"
+    },
+    {
+      "name": "Kaskus",
+      "uri_check": "https://www.kaskus.co.id/@{account}",
+      "e_code": 200,
+      "e_string": "IS_WEB = true",
+      "m_string": "We can't find",
+      "m_code": 404,
+      "known": ["szekspir", "xaphanpl"],
+      "cat": "social"
     },
     {
       "name": "karab.in",
