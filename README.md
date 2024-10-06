@@ -12,3 +12,10 @@ $ python profile-finder.py
 
 ## Screenshot
 ![sosial-scanner](https://github.com/user-attachments/assets/954b3ac6-531a-4906-a35c-446704a630a6)
+
+## Upcoming Features
+
+- **Social Media Updates**: The tool will continuously update the social media accounts that are checked to provide the latest information.
+  
+- **Account Metadata Addition**: We are planning to enhance the tool by adding metadata for core accounts to provide more comprehensive insights into each user's profile.
+
