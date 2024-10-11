@@ -154,10 +154,23 @@ def scrape_dicoding(html_content):
     about = soup.find('div', {'class': 'profile-about-description fr-view'})
     about_text = about.get_text(strip=True) if about else None
 
+    # Scraping the profile ID (using <link> tag or <meta> tag)
+    profile_id = None
+    canonical_link = soup.find('link', {'rel': 'canonical'})
+    if canonical_link and 'href' in canonical_link.attrs:
+        profile_id = canonical_link['href'].split('/')[-2]  # Extract ID from the URL
+
+    if not profile_id:  # If not found, try to find using <meta> tag
+        meta_tag = soup.find('meta', {'property': 'og:url'})
+        if meta_tag and 'content' in meta_tag.attrs:
+            profile_id = meta_tag['content'].split('/')[-1]  # Extract ID from the URL
+
     # Building the result dictionary, adding only if values are not None
     result = {}
     if name_text:
         result['name'] = name_text
+    if profile_id:
+        result['profile_id'] = profile_id
     if headline_text:
         result['headline'] = headline_text
     if join_date_text:
@@ -166,5 +179,54 @@ def scrape_dicoding(html_content):
         result['city'] = city_text
     if about_text:
         result['about'] = about_text
+
+    return result
+
+# Fungsi untuk melakukan scraping dari Zepeto
+def scrape_zepeto(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # Scraping name
+    name = soup.find('h2', class_='sc-fXazdy UjHkE')
+    name_text = name.get_text(strip=True) if name else None
+
+    # Scraping bio
+    bio = soup.find('p', class_='sc-TtZnY gnBPmJ')
+    bio_text = bio.get_text(strip=True) if bio else None
+
+    # Scraping all list items (post, follower, and following)
+    list_items = soup.find_all('li', class_='sc-oeezt OJJCp')
+
+    # Scraping post count
+    post_count = list_items[0].find('strong').get_text(strip=True) if len(list_items) > 0 and 'Post' in list_items[0].get_text() else '0'
+
+    # Scraping follower count
+    follower_count = list_items[1].find('strong').get_text(strip=True) if len(list_items) > 1 and 'Follower' in list_items[1].get_text() else '0'
+
+    # Scraping following count
+    following_count = list_items[2].find('strong').get_text(strip=True) if len(list_items) > 2 and 'Following' in list_items[2].get_text() else '0'
+
+    # Scraping avatar URL and Profile ID
+    avatar_img = soup.find('img', alt='avatar-image')
+    avatar_url = avatar_img['src'] if avatar_img else None
+
+    # Extracting Profile ID from avatar URL
+    profile_id = None
+    if avatar_url:
+        profile_id = avatar_url.split('/users/')[1].split('/')[0]
+
+    # Building the result dictionary
+    result = {}
+    if name_text:
+        result['name'] = name_text
+    if profile_id:
+        result['profile_id'] = profile_id
+    if bio_text:
+        result['bio'] = bio_text
+    result['posts'] = post_count
+    result['followers'] = follower_count
+    result['following'] = following_count
+    if avatar_url:
+        result['avatar_url'] = avatar_url
 
     return result

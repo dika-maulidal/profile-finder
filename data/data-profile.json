@@ -1630,16 +1630,6 @@
       "cat": "blog"
     },
     {
-      "name": "FatSecret",
-      "uri_check": "https://www.fatsecret.com/member/{account}",
-      "e_code": 200,
-      "e_string": "- Member</title>",
-      "m_string": "Your Key to Success",
-      "m_code": 302,
-      "known": ["bob", "bobby"],
-      "cat": "health"
-    },
-    {
       "name": "Federated.press (Mastodon Instance)",
       "uri_check": "https://federated.press/api/v1/accounts/lookup?acct={account}",
       "uri_pretty": "https://federated.press/@{account}",
@@ -4983,16 +4973,6 @@
       "cat": "business"
     },
     {
-      "name": "Taringa",
-      "uri_check": "https://www.taringa.net/{account}",
-      "e_code": 200,
-      "e_string": " en Taringa!</title>",
-      "m_string": "Colectiva en Taringa!</title>",
-      "m_code": 301,
-      "known": ["jocaxav", "engendrometal"],
-      "cat": "social"
-    },
-    {
       "name": "taskrabbit",
       "uri_check": "https://www.taskrabbit.com/profile/{account}/about",
       "e_code": 200,
@@ -5460,7 +5440,7 @@
       "uri_check": "https://vero.co/{account}",
       "e_code": 200,
       "e_string": "on VERO™</title>",
-      "m_string": "The page you are looking for doesn't exist.",
+      "m_string": "Sorry, this page is not available.",
       "m_code": 404,
       "known": ["alex", "johnny"],
       "cat": "art"
