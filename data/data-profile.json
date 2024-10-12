@@ -4653,7 +4653,7 @@
       "uri_pretty": "https://www.smule.com/{account}",
       "e_code": 200,
       "e_string": "account_id",
-      "m_string": "code\": 65",
+      "m_string": "profile_not_found",
       "m_code": 400,
       "known": ["cgrrose", "John___Anish"],
       "cat": "music"

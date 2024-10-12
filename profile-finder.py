@@ -77,9 +77,9 @@ def check_account(site, target_account, pbar, found_counter):
     pbar.update(1)  # Update progress bar after each check
 
 # Main function to run the OSINT tool with progress bar
-def run_osint(target_account):
+def run_osint(target_accounts):
     # Load the JSON data
-    data = load_json_data('data/data-profile.json')
+    data = load_json_data('data/data-profile.json')  # Load the provided JSON
     sites = data['sites']
 
     found_counter = [0]  # This will keep track of how many accounts were found
@@ -87,14 +87,19 @@ def run_osint(target_account):
     # Print the ASCII art
     print(ascii_art)
 
-    with tqdm(total=len(sites), desc=f"{Fore.LIGHTBLUE_EX}Scanning{Style.RESET_ALL}", unit="site", leave=True, bar_format="{l_bar}{bar}{r_bar}", colour="cyan") as pbar:
-        with ThreadPoolExecutor(max_workers=20) as executor:
-            futures = [executor.submit(check_account, site, target_account, pbar, found_counter) for site in sites]
-            for future in futures:
-                future.result() 
+    # Loop through each username
+    for target_account in target_accounts:
+        print(f"{Fore.LIGHTCYAN_EX}\nSearching for username: {target_account}{Style.RESET_ALL}")
+        
+        with tqdm(total=len(sites), desc=f"{Fore.LIGHTBLUE_EX}Scanning{Style.RESET_ALL}", unit="site", leave=True, bar_format="{l_bar}{bar}{r_bar}", colour="cyan") as pbar:
+            with ThreadPoolExecutor(max_workers=20) as executor:
+                futures = [executor.submit(check_account, site, target_account, pbar, found_counter) for site in sites]
+                for future in futures:
+                    future.result() 
     
     print(f"{Fore.LIGHTCYAN_EX}\nScan Completed! Found {found_counter[0]} out of {len(sites)} sites.{Style.RESET_ALL}")
 
 if __name__ == "__main__":
-    target_account = input(f"{Fore.LIGHTCYAN_EX}\nEnter the username to search: {Style.RESET_ALL}")
-    run_osint(target_account)
+    target_input = input(f"{Fore.LIGHTCYAN_EX}\nEnter usernames to search : {Style.RESET_ALL}")
+    target_accounts = target_input.split()  # Split the input string into multiple usernames
+    run_osint(target_accounts)
