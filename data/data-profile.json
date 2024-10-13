@@ -4669,6 +4669,16 @@
       "cat": "social"
     },
     {
+      "name": "Snackvideo",
+      "uri_check": "https://www.snackvideo.com/@{account}",
+      "e_code": 200,
+      "e_string": "Followers |",
+      "m_string": "No network",
+      "m_code": 200,
+      "known": ["djkhaled305", "mileycyrus"],
+      "cat": "social"
+    },
+    {
       "name": "Snipfeed",
       "uri_check": "https://snipfeed.co/{account}",
       "e_code": 200,
