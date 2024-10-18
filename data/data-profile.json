@@ -1000,7 +1000,7 @@
       "cat": "coding"
     },
     {
-      "name": "Codewars",
+      "name": "codewars",
       "uri_check": "https://www.codewars.com/users/{account}",
       "e_code": 200,
       "e_string": "| Codewars",
@@ -1822,16 +1822,6 @@
       "m_code": 404,
       "known": ["RealMarjorieGreene", "LaurenBoebert"],
       "cat": "political"
-    },
-    {
-      "name": "game_debate",
-      "uri_check": "https://www.game-debate.com/profile/{account}",
-      "e_code": 200,
-      "e_string": "| , , GB pc game performance",
-      "m_string": "Not Found",
-      "m_code": 404,
-      "known": ["Johnboy", "Crazy"],
-      "cat": "gaming"
     },
     {
       "name": "Game Jolt",
@@ -3463,16 +3453,6 @@
       "m_string": "- Not Found</title>",
       "m_code": 404,
       "known": ["fauux", "sadgrl"],
-      "cat": "social"
-    },
-    {
-      "name": "netvibes",
-      "uri_check": "https://www.netvibes.com/{account}",
-      "e_code": 200,
-      "e_string": "userId",
-      "m_string": "Page not found",
-      "m_code": 404,
-      "known": ["nebkacrea", "cdiljda"],
       "cat": "social"
     },
     {

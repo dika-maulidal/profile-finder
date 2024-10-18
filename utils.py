@@ -230,3 +230,77 @@ def scrape_zepeto(html_content):
         result['avatar_url'] = avatar_url
 
     return result
+
+# Codewars scraper
+def scrape_codewars(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # Initialize variables
+    name_text, clan_text, join_date_text, last_seen_text, avatar_url = None, None, None, None, None
+    social_media = []
+    following_count, followers_count, allies_count = '0', '0', '0'
+
+    # Find all div elements with class 'stat'
+    stat_divs = soup.find_all('div', class_='stat')
+
+    for stat_div in stat_divs:
+        text = stat_div.get_text(strip=True)
+
+        # Scraping the name
+        if "Name:" in text:
+            name_text = text.replace("Name:", "").strip()
+
+        # Scraping the clan
+        elif "Clan:" in text:
+            clan_text = text.replace("Clan:", "").strip()
+
+        # Scraping the join date
+        elif "Member Since:" in text:
+            join_date_text = text.replace("Member Since:", "").strip()
+
+        # Scraping the last seen date
+        elif "Last Seen:" in text:
+            last_seen_text = text.replace("Last Seen:", "").strip()
+
+        # Scraping social media profile links
+        elif "Profiles:" in text:
+            links = stat_div.find_all('a', href=True)
+            for link in links:
+                social_media.append(link['href'])
+
+        # Scraping the following count
+        elif "Following:" in text:
+            following_count = text.replace("Following:", "").strip()
+
+        # Scraping the followers count
+        elif "Followers:" in text:
+            followers_count = text.replace("Followers:", "").strip()
+
+        # Scraping the allies count
+        elif "Allies:" in text:
+            allies_count = text.replace("Allies:", "").strip()
+
+    # Scraping the avatar URL
+    avatar_img = soup.find('img', alt=lambda value: value and "Avatar" in value)
+    if avatar_img:
+        avatar_url = avatar_img['src']
+
+    # Building the result dictionary
+    result = {}
+    if name_text:
+        result['name'] = name_text
+    if clan_text:
+        result['clan'] = clan_text
+    if join_date_text:
+        result['join_date'] = join_date_text
+    if last_seen_text:
+        result['last_seen'] = last_seen_text
+    if social_media:
+        result['social_media'] = social_media
+    result['following'] = following_count
+    result['followers'] = followers_count
+    result['allies'] = allies_count
+    if avatar_url:
+        result['avatar_url'] = avatar_url
+
+    return result
