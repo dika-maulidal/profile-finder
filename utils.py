@@ -304,3 +304,64 @@ def scrape_codewars(html_content):
         result['avatar_url'] = avatar_url
 
     return result
+
+# XMind Scrapper
+def scrape_xmind(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # Scraping Name (mengabaikan tautan "Edit")
+    name_div = soup.find('div', class_='share-profile__username')
+    if name_div:
+        # Ambil teks tanpa tautan "Edit"
+        name_text = next(name_div.stripped_strings, None)
+
+    # Scraping Location
+    location_span = soup.find('span', class_='icon-location')
+    location_tooltip = location_span.find_parent('span')['title'] if location_span else None
+
+    # Scraping Website
+    website_span = soup.find('span', class_='icon-website')
+    website_tooltip = website_span.find_parent('span')['title'] if website_span else None
+
+    # Scraping Company
+    company_span = soup.find('span', class_='icon-company')
+    company_tooltip = company_span.find_parent('span')['title'] if company_span else None
+
+    # Scraping About
+    about_span = soup.find('span', class_='icon-about')
+    about_tooltip = about_span.find_parent('span')['title'] if about_span else None
+
+    # Scraping Featured Count
+    featured_div = soup.find('div', class_='share-profile__switcher', attrs={'data-tab': 'featured'})
+    featured_count = featured_div.find('span', class_='share-profile__switcher-count').get_text(strip=True) if featured_div else '0'
+
+    # Scraping Public Count
+    public_div = soup.select_one('div.share-profile__switcher.active[data-tab="public"]')
+    
+    if public_div:
+        public_count = public_div.find('span', class_='share-profile__switcher-count').get_text(strip=True)
+    else:
+        print("Error: Elemen 'public' tidak ditemukan.")
+        public_count = '0'
+
+    # Scraping Private Count
+    private_div = soup.find('div', class_='share-profile__switcher', attrs={'data-tab': 'private'})
+    private_count = private_div.find('span', class_='share-profile__switcher-count').get_text(strip=True) if private_div else '0'
+
+    # Building the result dictionary
+    result = {}
+    if name_text:
+        result['name'] = name_text
+    if location_tooltip:
+        result['location'] = location_tooltip
+    if website_tooltip:
+        result['website'] = website_tooltip
+    if company_tooltip:
+        result['company'] = company_tooltip
+    if about_tooltip:
+        result['about'] = about_tooltip
+    result['featured_count'] = featured_count
+    result['public_count'] = public_count
+    result['private_count'] = private_count
+
+    return result   
