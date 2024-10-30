@@ -715,6 +715,16 @@
       "cat": "misc"
     },
     {
+      "name": "Cake Resume",
+      "uri_check": "https://www.cake.me/me/{account}",
+      "e_code": 200,
+      "e_string": "Hubungkan",
+      "m_string": "Kami tidak dapat menemukan laman yang kamu cari. | Cake",
+      "m_code": 200,
+      "known": ["bob", "red"],
+      "cat": "social"
+    },
+    {
       "name": "Calendy",
       "uri_check": "https://calendly.com/{account}",
       "e_code": 200,
@@ -1166,7 +1176,7 @@
       "uri_check": "https://www.datezone.com/users/{account}/",
       "e_code": 200,
       "e_string": "profile_status",
-      "m_string": "Błąd wczytywania",
+      "m_string": "There is an error",
       "m_code": 200,
       "known": ["gpower550", "tgoat2022"],
       "cat": "xx NSFW xx"
@@ -2237,7 +2247,7 @@
       "e_code": 200,
       "e_string": "Channel Views",
       "m_code": 302,
-      "m_string": "DYNAMIC",
+      "m_string": "Watch Free Hentai Video Streams Online in 720p, 1080p HD - hanime.tv",
       "known": ["thecolorred-7902", "arisu-cum-stats-2787"],
       "cat": "xx NSFW xx"
     },
@@ -2512,7 +2522,7 @@
       "uri_check": "https://archive.org/wayback/available?url=https://instagram.com/{account}/",
       "e_code": 200,
       "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "\"archived_snapshots\": {}}",
+      "m_string": "Item not available",
       "m_code": 200,
       "known": ["zuck", "jack"],
       "cat": "social"
@@ -3694,7 +3704,7 @@
       "uri_pretty": "https://web.archive.org/web/2/https://parler.com/profile/{account}",
       "e_code": 200,
       "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "\"archived_snapshots\": {}",
+      "m_string": "Item not available",
       "m_code": 200,
       "known": ["JoePags", "dineshdsouza"],
       "cat": "archived"
@@ -3705,7 +3715,7 @@
       "uri_pretty": "https://web.archive.org/web/2/https://parler.com/profile/{account}/posts",
       "e_code": 200,
       "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "\"archived_snapshots\": {}",
+      "m_string": "Item not available",
       "m_code": 200,
       "known": ["JoePags", "dineshdsouza"],
       "cat": "archived"
@@ -4516,6 +4526,16 @@
       }
     },
     {
+      "name": "Showwcase",
+      "uri_check": "https://www.showwcase.com/{account}",
+      "e_code": 200,
+      "e_string": "Profile",
+      "m_string": "404 Page not found | Showwcase",
+      "m_code": 200,
+      "known": ["bob", "red"],
+      "cat": "coding"
+    },
+    {
       "name": "shutterstock",
       "uri_check": "https://www.shutterstock.com/g/{account}",
       "e_code": 200,
@@ -5256,7 +5276,7 @@
       "uri_pretty": "https://web.archive.org/web/2/https://twitter.com/{account}",
       "e_code": 200,
       "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "\"archived_snapshots\": {}",
+      "m_string": "Item not available",
       "m_code": 200,
       "known": ["jack", "dineshdsouza"],
       "cat": "archived"
@@ -5267,7 +5287,7 @@
       "uri_pretty": "https://web.archive.org/web/*/https://twitter.com/{account}/status/*",
       "e_code": 200,
       "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "\"archived_snapshots\": {}",
+      "m_string": "Item not available",
       "m_code": 200,
       "known": ["jack", "dineshdsouza"],
       "cat": "archived"
@@ -5955,16 +5975,6 @@
       "m_code": 302,
       "known": ["JOHN-L-SULLIVAN", "Maggie-Alegria"],
       "cat": "shopping"
-    },
-    {
-      "name": "zmarsa.com",
-      "uri_check": "https://zmarsa.com/uzytkownik/{account}/glowna/",
-      "e_code": 200,
-      "e_string": "Galeria użytkownika",
-      "m_string": "Błąd na stronie",
-      "m_code": 500,
-      "known": ["janek", "test"],
-      "cat": "xx NSFW xx"
     },
     {
       "name": "Zomato",
