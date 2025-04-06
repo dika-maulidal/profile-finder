@@ -101,7 +101,7 @@ def run_osint(target_accounts):
 
     # Loop through each username
     for target_account in target_accounts:
-        print(f"{Fore.LIGHTCYAN_EX}\nSearching for username: {target_account}{Style.RESET_ALL}")
+        print(f"{Fore.LIGHTCYAN_EX}Searching for username: {target_account}{Style.RESET_ALL}")
         
         with tqdm(total=len(sites), desc=f"{Fore.LIGHTBLUE_EX}Scanning{Style.RESET_ALL}", unit="site", leave=True, bar_format="{l_bar}{bar}{r_bar}", colour="cyan") as pbar:
             with ThreadPoolExecutor(max_workers=20) as executor:

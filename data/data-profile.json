@@ -24,16 +24,6 @@
       "cat": "social"
     },
     {
-      "name": "3DNews",
-      "uri_check": "https://forum.3dnews.tech/member.php?username={account}",
-      "e_code": 200,
-      "e_string": "Просмотр профиля:",
-      "m_string": "Пользователь не зарегистрирован",
-      "m_code": 200,
-      "known": ["bob", "red"],
-      "cat": "social"
-    },
-    {
       "name": "247sports",
       "uri_check": "https://247sports.com/User/{account}/",
       "e_code": 200,
@@ -91,16 +81,6 @@
       "m_string": "This is not the page you're looking for",
       "m_code": 404,
       "known": ["patricialmendro", "ginamariahoffmann", "espeworkout"],
-      "cat": "social"
-    },
-    {
-      "name": "aaha_chat",
-      "uri_check": "https://www.aahachat.org/profile/{account}/",
-      "e_code": 200,
-      "e_string": "https://www.aahachat.org/profile",
-      "m_string": "<title>Page not found",
-      "m_code": 404,
-      "known": ["crazy", "dog"],
       "cat": "social"
     },
     {
@@ -162,17 +142,6 @@
       "m_code": 404,
       "known": ["crypto", "crypto1"],
       "cat": "finance"
-    },
-    {
-      "name": "Airline_Pilot_Life",
-      "uri_check": "https://airlinepilot.life/u/{account}.json",
-      "uri_pretty": "https://airlinepilot.life/u/{account}",
-      "e_code": 200,
-      "e_string": "primary_group_name",
-      "m_string": "he requested URL or resource could not be found.",
-      "m_code": 404,
-      "known": ["hannah", "addison"],
-      "cat": "social"
     },
     {
       "name": "Airliners",
@@ -501,16 +470,6 @@
       "m_code": 404,
       "known": ["trustgreene", "chasel9"],
       "cat": "finance"
-    },
-    {
-      "name": "BIGO Live",
-      "uri_check": "https://www.bigo.tv/user/{account}",
-      "e_code": 200,
-      "e_string": "userInfo:{nickName",
-      "m_string": "userInfo:{}",
-      "m_code": 200,
-      "known": ["treasdior", "Jacin19"],
-      "cat": "gaming"
     },
     {
       "name": "Bikemap",
@@ -1030,16 +989,6 @@
       "cat": "coding"
     },
     {
-      "name": "cohost",
-      "uri_check": "https://cohost.org/{account}",
-      "e_code": 200,
-      "e_string": "cohost! - @",
-      "m_string": "Something went wrong",
-      "m_code": 404,
-      "known": ["vogon", "jkap"],
-      "cat": "social"
-    },
-    {
       "name": "COLOURlovers",
       "uri_check": "https://www.colourlovers.com/lover/{account}",
       "e_code": 200,
@@ -1078,16 +1027,6 @@
       "m_code": 301,
       "known": ["jaxjames", "mike"],
       "cat": "xx NSFW xx"
-    },
-    {
-      "name": "cracked_io",
-      "uri_check": "https://cracked.io/{account}",
-      "e_code": 200,
-      "e_string": "Cracked.io - Profile of",
-      "m_string": "The member you specified is either invalid or doesn't exist",
-      "m_code": 404,
-      "known": ["RealPsycho", "SamWinchester"],
-      "cat": "social"
     },
     {
       "name": "Cracked",
@@ -2518,16 +2457,6 @@
       "cat": "social"
     },
     {
-      "name": "Instagram_archives",
-      "uri_check": "https://archive.org/wayback/available?url=https://instagram.com/{account}/",
-      "e_code": 200,
-      "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "Item not available",
-      "m_code": 200,
-      "known": ["zuck", "jack"],
-      "cat": "social"
-    },
-    {
       "name": "instructables",
       "uri_check": "https://www.instructables.com/member/{account}/",
       "e_code": 200,
@@ -2659,16 +2588,6 @@
       "cat": "social"
     },
     {
-      "name": "karab.in",
-      "uri_check": "https://karab.in/u/{account}",
-      "e_code": 200,
-      "e_string": "Dołączył:",
-      "m_string": "Błąd 404",
-      "m_code": 404,
-      "known": ["ernest", "puszkapandory"],
-      "cat": "social"
-    },
-    {
       "name": "Keybase",
       "uri_check": "https://keybase.io/{account}",
       "e_code": 200,
@@ -2727,16 +2646,6 @@
       "m_code": 404,
       "known": ["test"],
       "cat": "gaming"
-    },
-    {
-      "name": "Kotburger",
-      "uri_check": "https://kotburger.pl/user/{account}",
-      "e_code": 200,
-      "e_string": "Zamieszcza kotburgery od:",
-      "m_string": "Nie znaleziono użytkownika o podanym loginie.",
-      "m_code": 200,
-      "known": ["ania", "janek"],
-      "cat": "images"
     },
     {
       "name": "kwejk.pl",
@@ -3699,28 +3608,6 @@
       "cat": "social"
     },
     {
-      "name": "Parler archived profile",
-      "uri_check": "http://archive.org/wayback/available?url=https://parler.com/profile/{account}",
-      "uri_pretty": "https://web.archive.org/web/2/https://parler.com/profile/{account}",
-      "e_code": 200,
-      "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "Item not available",
-      "m_code": 200,
-      "known": ["JoePags", "dineshdsouza"],
-      "cat": "archived"
-    },
-    {
-      "name": "Parler archived posts",
-      "uri_check": "http://archive.org/wayback/available?url=https://parler.com/profile/{account}/posts",
-      "uri_pretty": "https://web.archive.org/web/2/https://parler.com/profile/{account}/posts",
-      "e_code": 200,
-      "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "Item not available",
-      "m_code": 200,
-      "known": ["JoePags", "dineshdsouza"],
-      "cat": "archived"
-    },
-    {
       "name": "Pastebin",
       "uri_check": "https://pastebin.com/u/{account}",
       "e_code": 200,
@@ -4123,16 +4010,6 @@
       "m_code": 404,
       "known": ["igor1", "david2"],
       "cat": "finance"
-    },
-    {
-      "name": "pypi",
-      "uri_check": "https://pypi.org/user/{account}/",
-      "e_code": 200,
-      "e_string": "Profile of",
-      "m_string": "Page Not Found (404) · PyPI",
-      "m_code": 404,
-      "known": ["dev", "pydude"],
-      "cat": "coding"
     },
     {
       "name": "QUEER PL",
@@ -5239,16 +5116,6 @@
       "cat": "images"
     },
     {
-      "name": "Tunefind",
-      "uri_check": "https://www.tunefind.com/user/profile/{account}",
-      "e_code": 200,
-      "e_string": "Achievements",
-      "m_string": "Page not found",
-      "m_code": 404,
-      "known": ["baywolfmusic", "mrcerny18"],
-      "cat": "music"
-    },
-    {
       "name": "Twitch",
       "uri_check": "https://twitchtracker.com/{account}",
       "uri_pretty": "https://twitch.tv/{account}/",
@@ -5269,28 +5136,6 @@
       "m_code": 404,
       "known": ["WebBreacher", "OSINT_Tactical"],
       "cat": "social"
-    },
-    {
-      "name": "Twitter archived profile",
-      "uri_check": "http://archive.org/wayback/available?url=https://twitter.com/{account}",
-      "uri_pretty": "https://web.archive.org/web/2/https://twitter.com/{account}",
-      "e_code": 200,
-      "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "Item not available",
-      "m_code": 200,
-      "known": ["jack", "dineshdsouza"],
-      "cat": "archived"
-    },
-    {
-      "name": "Twitter archived tweets",
-      "uri_check": "http://archive.org/wayback/available?url=https://twitter.com/{account}/status/*",
-      "uri_pretty": "https://web.archive.org/web/*/https://twitter.com/{account}/status/*",
-      "e_code": 200,
-      "e_string": "\"archived_snapshots\": {\"closest\"",
-      "m_string": "Item not available",
-      "m_code": 200,
-      "known": ["jack", "dineshdsouza"],
-      "cat": "archived"
     },
     {
       "name": "twoplustwo",
@@ -5454,16 +5299,6 @@
       "m_code": 404,
       "known": ["lars01", "sven"],
       "cat": "misc"
-    },
-    {
-      "name": "viddler",
-      "uri_check": "https://www.viddler.com/channel/{account}/",
-      "e_code": 200,
-      "e_string": "profile-details",
-      "m_string": "User not found",
-      "m_code": 404,
-      "known": ["GamingParodies", "planphilly"],
-      "cat": "video"
     },
     {
       "name": "Viewbug",
